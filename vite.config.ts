@@ -16,10 +16,10 @@ export default {
       // experimentalDynamicDirective: true,
       enableDynamicComponents: true,
       // allows using `await import()` with non-strict strings (dynamic values)
-      experimentalDynamicComponent: {
-        // loader: '@salesforce/loader',
-        strictSpecifier: false,
-      },
+      // experimentalDynamicComponent: {
+      //   // loader: '@salesforce/loader',
+      //   strictSpecifier: false,
+      // },
     }),
   ],
 } satisfies UserConfig

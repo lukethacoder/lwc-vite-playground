@@ -3,9 +3,6 @@
     {
       "dir": "./force-app/main/default/lwc",
       "namespace": "c"
-    },
-    {
-      "dir": "./modules"
     }
   ]
 }
