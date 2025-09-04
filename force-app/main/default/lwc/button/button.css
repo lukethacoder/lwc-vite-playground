@@ -1,0 +1,15 @@
+@import 'c/cssShared';
+
+button {
+  cursor: pointer;
+  background-color: #deb887;
+  padding: 4px 8px;
+  border: none;
+}
+button:hover {
+  background-color: #ab8d67;
+}
+button:focus-visible {
+  outline: 2px solid #deb887;
+  outline-offset: 2px;
+}

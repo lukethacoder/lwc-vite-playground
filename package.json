@@ -1,0 +1,32 @@
+{
+  "name": "csr",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --debug transform",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@lwc/engine-dom": "^8.21.6",
+    "@lwc/module-resolver": "npm:@lukethacoder/lwc-module-resolver",
+    "@lwc/rollup-plugin": "^8.21.6",
+    "@lwc/synthetic-shadow": "^8.21.6",
+    "lwc": "^8.21.6",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.3",
+    "vite-plugin-lwc": "^4.1.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@lwc/module-resolver": "npm:@lukethacoder/lwc-module-resolver"
+    },
+    "onlyBuiltDependencies": [
+      "@lukethacoder/lwc-module-resolver",
+      "esbuild"
+    ]
+  }
+}

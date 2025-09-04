@@ -1,0 +1,24 @@
+<template>
+  <template lwc:if={msg}>
+    <h1>{msg}</h1>
+  </template>
+
+  <div class="card">
+    <button type="button" onclick={handleClick}>count is: {count}</button>
+    <p>
+      Edit <code>modules/c/helloWorld/HelloWorld.html</code> to test HMR
+    </p>
+  </div>
+
+  <p>
+    Check out <a href="https://lwc.dev/guide/install#via-rollup" target="_blank">create-lwc</a>, the official LWC + Rollup starter
+  </p>
+  <p>
+    Learn more about IDE Support for LWC in the&nbsp;<a href="https://lwc.dev/guide/install#tools" target="_blank">LWC Installation Guide</a>.
+  </p>
+  <p class="read-the-docs">Click on the Vite and LWC logos to learn more</p>
+  
+  <template lwc:if={customLwcCtor}>
+    <lwc:component lwc:is={customLwcCtor}></lwc:component>
+  </template>
+</template>
