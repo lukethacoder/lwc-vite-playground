@@ -3,6 +3,7 @@
  *
  * @see https://github.com/cardoso/vite-plugin-lwc
  */
+import path from 'path'
 import patch from './patch.ts'
 import lwc from './lwc.ts'
 import alias from './alias.ts'
@@ -53,12 +54,15 @@ function transformOverride(transform, viteOptions) {
  * @returns {boolean}
  */
 const isInModuleDirs = (id: string, moduleDirs: string[]) => {
+  const normalizeId = path.normalize(id)
+
   // loop until a match is found (or fail through all matches)
   for (const moduleDir of moduleDirs) {
     // removes the `./` from the prefix so the full path of id matches
-    const dirPath = moduleDir.replace('./', '/')
+    const normalizeDir = path.normalize(moduleDir)
+    const dirPath = normalizeDir.replace('./', '/')
 
-    if (id.includes(dirPath)) {
+    if (normalizeId.includes(dirPath)) {
       return true
     }
   }
@@ -74,11 +78,9 @@ const isLwcCss = (id: string, moduleDirs: string[]) => {
     id.includes(IMPLICIT_DEFAULT_HTML_PATH) ||
     id.includes(IMPLICIT_DEFAULT_CSS_PATH)
   ) {
-    // console.log('✅ IS LWC IMPORT, handling properly ', { id })
     return true
   }
 
-  // console.log('❌ ingore non-LWC CSS import ', { id })
   // continue with standard Vite CSS processing
   return false
 }
